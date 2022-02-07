@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+     <!--font style  -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>TodoList</h1>
+        <form>
+            <input type="text" name="task"  id="new-todo" placeholder="What needs to be done?"/>
+        </form>
+        
+        <ul id="todolist">
+            <li class="todo">
+              <label><input type="checkbox" /> Sweep the floor</label>
+            </li>
+            <li class="todo completed">
+              <label><input type="checkbox" checked /> Dust the vases</label>
+            </li>
+        </ul>
+
+        <div class="footer">
+            Todo: <span id="todo-count">1</span> 
+            • Done:<span id="completed-count">0</span> 
+            • Total:<span id="total-count">1</span>
+        </div>
+          
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
