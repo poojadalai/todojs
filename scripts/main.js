@@ -93,23 +93,3 @@
     updateCounters();
   });
 
-
-  function cleanUpDoneTodos() {
-    // get all the "done" items
-
-    const doneItems = document.querySelectorAll(".completed")
-  
-    // loop through the "done" todo items
-    for (let i = 0; i < doneItems.length; i++) {
-      // and remove them from the DOM
-        doneItems[i].remove();
-    }
-  
-    updateCounters();
-  }
-  
-  // retrieve the link
-  const link = document.getElementById('clean-up')
-  
-  // add an event listener for a click on the link to the cleanUpDoneTodos function
-  link.addEventListener("click", cleanUpDoneTodos);
