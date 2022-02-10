@@ -14,8 +14,10 @@
 <body>
     <div class="container">
         <h1>TodoList</h1>
-        <form>
-            <input type="text" name="task"  id="new-todo" placeholder="What needs to be done?"/>
+        <form method="POST">
+            <input type="text" name="task"  id="new-todo" placeholder="What needs to be done?"> 
+            <input type="color" id="todo-color" name="favcolor">
+            <input type="date" id="deadline" name="deadline">
         </form>
         
         <ul id="todolist">

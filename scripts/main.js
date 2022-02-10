@@ -1,5 +1,5 @@
   function updateCounters() {
-     // Total number of todos
+    // Total number of todos
     const totalCount = document.getElementById("total-count");
     const totalTodos = document.getElementsByClassName("todo").length;
     totalCount.innerHTML = totalTodos;
@@ -15,7 +15,6 @@
     todoCount.innerHTML = uncompletedTodos;
   }
   
-
   function toggleDone(event) {
     // get the checkbox from the event object
     const checkbox = event.currentTarget;
@@ -32,7 +31,6 @@
     updateCounters();
   }
   
-
   // add a "change" event listener to every checkbox,
   const checkboxes = document.querySelectorAll('.todo input');
 
@@ -43,16 +41,15 @@
   }
   updateCounters();
 
-  function createTodo(title) {
+  function createTodo(title, color, date) {
     // create a label
-    const label = document.createElement('label');
+    const label = document.createElement('label');    
 
     // create a checkbox
-
     const checkbox = document.createElement('input')
     checkbox.type = "checkbox";
     checkbox.checked = false;
-
+ 
     // add the "change" event listener to the checkbox
     checkbox.addEventListener("change", toggleDone);
 
@@ -60,7 +57,10 @@
     label.appendChild(checkbox);
 
     // create a text node with the given title
-    const labelText = document.createTextNode(" " + title);
+    const labelText = document.createTextNode(" " + title + "  Deadline:" + date);
+
+    //add color to label
+    label.style.color = color;
     
     // and append the text node to the label
     label.appendChild(labelText);
@@ -73,17 +73,23 @@
 
     // append the list item to the todo list
     const list = document.getElementById("todolist");
+
     list.appendChild(listItem);
 
   }
   
-  const form = document.querySelector('form');
-
-  form.addEventListener("submit", function addNewTodo(event) {
+    document.querySelector('form').addEventListener("submit", function addNewTodo(event) {
+ 
     event.preventDefault();
     const inputField = document.querySelector("#new-todo");
+    const inputColor = document.querySelector("#todo-color");
+    const deadline = document.querySelector("#deadline");
     const newTodoTitle = inputField.value;
-    createTodo(newTodoTitle)
+    const newTodoColor = inputColor.value;
+    const deadlineDate = deadline.value;
+    
+    createTodo(newTodoTitle, newTodoColor, deadlineDate)
+
 
     // reset the value of the inputField to make it empty and
     inputField.innerHTML = "";
@@ -93,7 +99,7 @@
     updateCounters();
   });
 
-
+  
   function cleanUpDoneTodos() {
     // get all the "done" items
 

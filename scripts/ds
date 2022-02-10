@@ -1,0 +1,16 @@
+   const defaultColor = "#0000ff";
+
+    let colorWell = document.querySelector("#todo-color");
+    colorWell.value = defaultColor;
+    colorWell.addEventListener("change", updateColor, false)
+
+    colorWell.select();
+
+
+
+  function updateColor(event) {    
+    let colors = document.querySelector(".todo");
+    // color.forEach(function(color) {
+     colors.style.color = event.target.value;
+    // });
+  }
