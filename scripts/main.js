@@ -1,3 +1,14 @@
+  const inputField = document.querySelector("#new-todo");
+  const inputColor = document.querySelector("#todo-color");
+  const deadline = document.querySelector("#deadline");
+  inputColor.focus();
+
+  deadline.addEventListener("change", function(){
+      console.log("date changed!")
+      inputField.focus();
+  })
+
+
   function updateCounters() {
     // Total number of todos
     const totalCount = document.getElementById("total-count");
@@ -81,9 +92,6 @@
     document.querySelector('form').addEventListener("submit", function addNewTodo(event) {
  
     event.preventDefault();
-    const inputField = document.querySelector("#new-todo");
-    const inputColor = document.querySelector("#todo-color");
-    const deadline = document.querySelector("#deadline");
     const newTodoTitle = inputField.value;
     const newTodoColor = inputColor.value;
     const deadlineDate = deadline.value;
